@@ -15,19 +15,20 @@ public class Debug {
                 "Palabra Clave Libro",
                 "Temas Libro",
                 "Descripcion Libro",
-                9,9,9);
+                9,9,9,Estado.ACTIVO);
+
 
         Revista revista =  new Revista("AutorRevista","TituloRevista",
                 "Revista",
                 "Revista Temas",
                 "Revista Descripcion",
-                "Revista Frecuencia Actual",10,10,10,10);
+                "Revista Frecuencia Actual",10,10,10,10,Estado.ACTIVO);
 
         Tesis tesis = new Tesis("Autor Tesis","Titulo Tesis",
                 "Tesis",
                 "Tesis Temas",
                 "Tesis Descripcion",
-                "Area Tesis",11,11,11);
+                "Area Tesis",11,11,11,Estado.ACTIVO);
 
         baseDeDatos.add(libro);
         baseDeDatos.add(revista);

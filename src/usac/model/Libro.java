@@ -1,10 +1,14 @@
 package usac.model;
 
+import usac.Estado;
+
 public class Libro extends Documento {
 
-    public Libro(String autor, String titulo, String palabra_clave, String temas, String descripcion, Integer edicion, Integer copias, Integer disponibles) {
-        super(autor, titulo, palabra_clave, temas, descripcion, edicion, copias, disponibles);
+
+    public Libro(String autor, String titulo, String palabra_clave, String temas, String descripcion, Integer edicion, Integer copias, Integer disponibles, Estado estado) {
+        super(autor, titulo, palabra_clave, temas, descripcion, edicion, copias, disponibles, estado);
     }
+
 
     @Override
     public String toString() {
@@ -17,6 +21,7 @@ public class Libro extends Documento {
                 ", edicion=" + edicion +
                 ", copias=" + copias +
                 ", disponibles=" + disponibles +
+                ", estado=" + estado +
                 '}';
     }
 }

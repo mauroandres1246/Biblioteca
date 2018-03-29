@@ -1,18 +1,21 @@
 package usac.model;
 
+import usac.Estado;
+
 public class Tesis extends Documento {
-    String area;
-    public Tesis(String autor,
-                 String titulo,
-                 String palabra_clave,
-                 String temas,
-                 String descripcion,
-                 String area,
-                 Integer edicion,
-                 Integer copias,
-                 Integer disponibles) {
-        super(autor, titulo, palabra_clave, temas, descripcion, edicion, copias, disponibles);
+    private String area;
+
+    public Tesis(String autor, String titulo, String palabra_clave, String temas, String descripcion,String area, Integer edicion, Integer copias, Integer disponibles, Estado estado) {
+        super(autor, titulo, palabra_clave, temas, descripcion, edicion, copias, disponibles, estado);
         this.area=area;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
     }
 
     @Override
@@ -27,6 +30,7 @@ public class Tesis extends Documento {
                 ", edicion=" + edicion +
                 ", copias=" + copias +
                 ", disponibles=" + disponibles +
+                ", estado=" + estado +
                 '}';
     }
 }
