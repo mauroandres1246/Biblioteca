@@ -5,21 +5,11 @@ import usac.Estado;
 public class Revista extends Documento {
     private String frecuencia_actual;
     private Integer no_ejemplar;
-    public Revista(String autor,
-                   String titulo,
-                   String palabra_clave,
-                   String temas,
-                   String descripcion,
-                   String frecuencia_actual,
-                   Integer no_ejemplar ,
-                   Integer edicion,
-                   Integer copias,
-                   Integer disponibles,
-                   Estado estado) {
-        super(autor, titulo, palabra_clave, temas, descripcion, edicion, copias, disponibles,estado);
-        this.frecuencia_actual=frecuencia_actual;
-        this.no_ejemplar=no_ejemplar;
+
+    public Revista(String autor, String titulo, String descripcion, Integer edicion, Integer copias, Integer disponibles, String[] palabra_claves, String[] temas) {
+        super(autor, titulo, descripcion, edicion, copias, disponibles, palabra_claves, temas);
     }
+
 
     public String getFrecuencia_actual() {
         return frecuencia_actual;
@@ -37,20 +27,5 @@ public class Revista extends Documento {
         this.no_ejemplar = no_ejemplar;
     }
 
-    @Override
-    public String toString() {
-        return "Revista{" +
-                "frecuencia_actual='" + frecuencia_actual + '\'' +
-                ", no_ejemplar=" + no_ejemplar +
-                ", autor='" + autor + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", palabra_clave='" + palabra_clave + '\'' +
-                ", temas='" + temas + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", edicion=" + edicion +
-                ", copias=" + copias +
-                ", disponibles=" + disponibles +
-                ", estado=" + estado +
-                '}';
-    }
+
 }

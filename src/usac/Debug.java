@@ -8,38 +8,39 @@ import usac.model.Tesis;
 import java.util.Vector;
 
 public class Debug {
-    Vector<Documento> baseDeDatos = BaseDeDatos.baseDeDatos;
+    Vector<Documento> baseDeDatos = BaseDeDatos.bibliografias;
 
     public Debug() {
-        Libro libro =  new Libro("Autor Libro","Titulo Libro",
-                "Palabra Clave Libro",
-                "Temas Libro",
-                "Descripcion Libro",
-                9,9,9,Estado.ACTIVO);
+        alimentandoBiblioGrafias();
 
+    }
 
-        Revista revista =  new Revista("AutorRevista","TituloRevista",
-                "Revista",
-                "Revista Temas",
-                "Revista Descripcion",
-                "Revista Frecuencia Actual",10,10,10,10,Estado.ACTIVO);
+    private void alimentandoBiblioGrafias() {
 
-        Tesis tesis = new Tesis("Autor Tesis","Titulo Tesis",
-                "Tesis",
-                "Tesis Temas",
-                "Tesis Descripcion",
-                "Area Tesis",11,11,11,Estado.ACTIVO);
-
-        baseDeDatos.add(libro);
-        baseDeDatos.add(revista);
-        baseDeDatos.add(tesis);
 
         for (Documento doc: baseDeDatos) {
             System.out.println(doc);
         }
-
     }
 
+    private void cargaMasiva(){
+        String cadena = "0; Autor1; Titulo1; Descripcion1; palabra1, palabra2; 2; tema1, tema2; ; ; ; 10; 2 ";
+        cadena.trim();
+        String [] valores = cadena.split(";");
+        //VALORES
+    }
+
+    private TipoDeDocumento getTipoDeLibro(String cadena){
+        if (cadena.equals("0")){
+            return TipoDeDocumento.LIBRO;
+        }else  if(cadena.equals("1")){
+            return TipoDeDocumento.REVISTA;
+        }else  if(cadena.equals("2")){
+            return TipoDeDocumento.TESIS;
+        }else {
+            return null;
+        }
+    }
 
 
 }
